@@ -126,7 +126,7 @@ public class ExtFlightDelaysDAO {
 	}
 
 	public List<Rotta> getRotte(Map<Integer, Airport> idMap) {
-		String sql = "SELECT DISTINCT ORIGIN_AIRPORT_ID as ID1, DESTINATION_AIRPORT_ID AS ID2, AVG(ELAPSED_TIME) AS AVG " + 
+		String sql = "SELECT ORIGIN_AIRPORT_ID as ID1, DESTINATION_AIRPORT_ID AS ID2, AVG(ELAPSED_TIME) AS AVG " + 
 				"FROM flights " + 
 				"GROUP BY ID1,ID2 " + 
 				" ";

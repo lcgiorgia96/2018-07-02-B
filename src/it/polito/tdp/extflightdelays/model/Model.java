@@ -50,9 +50,11 @@ public class Model {
 			Airport a2 = r.getA2();
 			double peso = r.getMedia();
 			
-			
+			if (grafo.getEdge(a1, a2)==null) {
 			Graphs.addEdge(this.grafo, a1, a2, peso);
-			
+			} else {
+				grafo.setEdgeWeight(grafo.getEdge(a1, a2), (grafo.getEdgeWeight(grafo.getEdge(a1, a2))+peso)/2);
+			}
 		}
 		
 		System.out.println(grafo.edgeSet().size());
